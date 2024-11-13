@@ -5,10 +5,10 @@ import main.adventofcode.year2019.days.Day01;
 
 public class AdventOfCode2019 {
 
-    public void runDay(int day, String input) {
+    public void runDay(int day) {
         Day dayInstance = getDayInstance(day);
         if (dayInstance != null) {
-            dayInstance.printSolutions(input);
+            dayInstance.printSolutions(createInputFilePathFromDay(day));
         } else {
             System.out.println("Day " + day + " not implemented yet.");
         }
@@ -16,9 +16,17 @@ public class AdventOfCode2019 {
 
     // Factory-like method to get instance
     public Day getDayInstance(int day) {
+        String dayFormatted = String.format("%02d", day);
+        String inputFilePath = "src/main/adventofcode/year2019/input/Day" + dayFormatted + ".txt";
+
         return switch (day) {
-            case 1 -> new Day01();
+            case 1 -> new Day01(inputFilePath);
             default -> null;
         };
+    }
+
+    private String createInputFilePathFromDay(int day) {
+        String dayFormatted = String.format("%02d", day);
+        return "src/main/adventofcode/year2019/input/Day" + dayFormatted + ".txt";
     }
 }
