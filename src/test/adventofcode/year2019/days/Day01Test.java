@@ -37,4 +37,14 @@ public class Day01Test {
         assertEquals(0, day01.calculateFuelForSingleModule(1));  // (1 / 3) - 2 = -1 (but fuel cannot be negative)
         assertEquals(0, day01.calculateFuelForSingleModule(2));  // (2 / 3) - 2 = -1 (but fuel cannot be negative)
     }
+
+    @Test
+    public void testFuelForFuel() {
+        // Fuel is additional mass, thus requires more fuel
+        Day01 day01 = new Day01("src/main/adventofcode/year2019/input/Day01.txt");
+        assertEquals(2, day01.calculateFuelForSingleModuleWithFuelForFuel(14));  // (0 / 3) - 2 = -2 (but fuel cannot be negative)
+        assertEquals(966, day01.calculateFuelForSingleModuleWithFuelForFuel(1969));  // (1 / 3) - 2 = -1 (but fuel cannot be negative)
+        assertEquals(50346, day01.calculateFuelForSingleModuleWithFuelForFuel(100756));  // (2 / 3) - 2 = -1 (but fuel cannot be negative)
+
+    }
 }

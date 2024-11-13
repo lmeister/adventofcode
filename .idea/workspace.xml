@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b35be649-d700-4c29-a921-67b76dbd0b81" name="Changes" comment="Update gitignore">
-      <change afterPath="$PROJECT_DIR$/src/main/adventofcode/framework/InputReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/input/Day01.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b35be649-d700-4c29-a921-67b76dbd0b81" name="Changes" comment="2019-Day01 solved">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdventOfCode.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AdventOfCode.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/framework/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/framework/Day.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/year2019/AdventOfCode2019.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/AdventOfCode2019.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/year2019/days/Day01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/days/Day01.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/adventofcode/year2019/days/Day01Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/adventofcode/year2019/days/Day01Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +69,7 @@
       <recent name="test.adventofcode.year2019.days" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.Day01Test.testFuelForFuel">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="AdventOfCode" />
@@ -116,8 +108,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Day01Test.testFuelForFuel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AdventOfCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.adventofcode.year2019.days.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.adventofcode.year2019.days" />
+      <option name="MAIN_CLASS_NAME" value="test.adventofcode.year2019.days.Day01Test" />
+      <option name="METHOD_NAME" value="testFuelForFuel" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Day01Test.testFuelForFuel" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.Day01Test" />
         <item itemvalue="JUnit.Day01Test.testCalculateFuel" />
@@ -155,7 +164,21 @@
       <option name="project" value="LOCAL" />
       <updated>1731503012012</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="2019-Day01 solved">
+      <created>1731506513217</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731506513218</updated>
+    </task>
+    <task id="LOCAL-00005" summary="2019-Day01 solved">
+      <created>1731506898747</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731506898747</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,6 +196,7 @@
     <MESSAGE value="Updated" />
     <MESSAGE value="Updated Structure" />
     <MESSAGE value="Update gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update gitignore" />
+    <MESSAGE value="2019-Day01 solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019-Day01 solved" />
   </component>
 </project>
