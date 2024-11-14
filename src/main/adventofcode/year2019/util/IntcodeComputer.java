@@ -48,7 +48,7 @@ public class IntcodeComputer {
         return this.program;
     }
 
-    public void runOpcode(int operation, int address1, int address2, int targetAddress) {
+    private void runOpcode(int operation, int address1, int address2, int targetAddress) {
         if (address1 >= this.program.size() || address2 >= this.program.size() || targetAddress >= this.program.size()) {
             String errorMessage = String.format(
                     "Address out of bounds:\nAddress1=[%d], Address2=[%d], TargetAddress=[%d], Programsize=[%d]",
@@ -67,7 +67,7 @@ public class IntcodeComputer {
                 // Do nothing, program should halt (Handled in runProgram)
                 break;
             default:
-                System.out.println("Invalid opcode: " + operation);
+                throw new IllegalArgumentException("Invalid opcode: " + operation);
         }
     }
 }
