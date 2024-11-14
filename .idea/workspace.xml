@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b35be649-d700-4c29-a921-67b76dbd0b81" name="Changes" comment="2019-Day01 solved">
+    <list default="true" id="b35be649-d700-4c29-a921-67b76dbd0b81" name="Changes" comment="2019-Day02 Added part 1 solution">
+      <change afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/days/Day02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/input/Day02.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/util/IntcodeComputer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/adventofcode/year2019/days/Day01Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/adventofcode/year2019/days/Day01Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/framework/InputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/framework/InputReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/year2019/AdventOfCode2019.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/AdventOfCode2019.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +34,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2onKz8PMqTVKFy4dhTj6EJTUcjH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -52,7 +57,8 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -69,7 +75,7 @@
       <recent name="test.adventofcode.year2019.days" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Day01Test.testFuelForFuel">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="AdventOfCode" />
@@ -126,8 +132,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Day01Test.testFuelForFuel" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.Day01Test.testFuelForFuel" />
         <item itemvalue="JUnit.Day01Test" />
         <item itemvalue="JUnit.Day01Test.testCalculateFuel" />
       </list>
@@ -142,6 +148,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731500167053</updated>
       <workItem from="1731500167144" duration="2000" />
+      <workItem from="1731595236724" duration="3867000" />
     </task>
     <task id="LOCAL-00001" summary="Updated">
       <created>1731502530960</created>
@@ -178,8 +185,18 @@
       <option name="project" value="LOCAL" />
       <updated>1731506898747</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="2019-Day01 Added test cases for part 2">
+      <created>1731507206334</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731507206334</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -197,6 +214,8 @@
     <MESSAGE value="Updated Structure" />
     <MESSAGE value="Update gitignore" />
     <MESSAGE value="2019-Day01 solved" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019-Day01 solved" />
+    <MESSAGE value="2019-Day01 Added test cases for part 2" />
+    <MESSAGE value="2019-Day02 Added part 1 solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019-Day02 Added part 1 solution" />
   </component>
 </project>
