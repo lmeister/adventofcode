@@ -12,12 +12,14 @@ public class IntcodeComputer {
 
     public IntcodeComputer(List<Integer> memory) {
         this.memory = new ArrayList<>(memory); // copy in order to maintain original list just in case
+        this.currentState = new ArrayList<>(this.memory);
     }
 
     public IntcodeComputer(String memory) {
         this.memory = Arrays.stream(memory.split(","))
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
+        this.currentState = new ArrayList<>(this.memory);
     }
 
     public void initializeProgramState(int noun, int verb) {
@@ -74,5 +76,9 @@ public class IntcodeComputer {
             default:
                 throw new IllegalArgumentException("Invalid opcode: " + operation);
         }
+    }
+
+    public List<Integer> getCurrentState() {
+        return this.currentState;
     }
 }
