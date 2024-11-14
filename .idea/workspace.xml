@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b35be649-d700-4c29-a921-67b76dbd0b81" name="Changes" comment="2019-Day02 Added part 1 solution">
-      <change afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/days/Day02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/input/Day02.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/util/IntcodeComputer.java" afterDir="false" />
+    <list default="true" id="b35be649-d700-4c29-a921-67b76dbd0b81" name="Changes" comment=".gitignore fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/framework/InputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/framework/InputReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/year2019/AdventOfCode2019.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/AdventOfCode2019.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/year2019/days/Day02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/days/Day02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/year2019/util/IntcodeComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/util/IntcodeComputer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +144,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731500167053</updated>
       <workItem from="1731500167144" duration="2000" />
-      <workItem from="1731595236724" duration="3867000" />
+      <workItem from="1731595236724" duration="5290000" />
     </task>
     <task id="LOCAL-00001" summary="Updated">
       <created>1731502530960</created>
@@ -192,7 +188,28 @@
       <option name="project" value="LOCAL" />
       <updated>1731507206334</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="2019-Day02 Added part 1 solution">
+      <created>1731599114347</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1731599114347</updated>
+    </task>
+    <task id="LOCAL-00008" summary="2019-Day02 Minor changes part1">
+      <created>1731599181262</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731599181262</updated>
+    </task>
+    <task id="LOCAL-00009" summary=".gitignore fix">
+      <created>1731599214689</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1731599214689</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +233,8 @@
     <MESSAGE value="2019-Day01 solved" />
     <MESSAGE value="2019-Day01 Added test cases for part 2" />
     <MESSAGE value="2019-Day02 Added part 1 solution" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019-Day02 Added part 1 solution" />
+    <MESSAGE value="2019-Day02 Minor changes part1" />
+    <MESSAGE value=".gitignore fix" />
+    <option name="LAST_COMMIT_MESSAGE" value=".gitignore fix" />
   </component>
 </project>
