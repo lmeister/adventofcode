@@ -42,11 +42,11 @@ public class Day03 implements Day {
             Map<Point, Integer> wire2PointStepMap = wirePathToPointStepMap(input.get(1));
             Set<Point> intersections = getIntersections(wire1PointStepMap.keySet(), wire2PointStepMap.keySet());
 
-            int minDistance = intersections.stream()
+            int minCombinedSteps = intersections.stream()
                     .mapToInt(intersection -> wire1PointStepMap.get(intersection) + wire2PointStepMap.get(intersection))
                     .min()
                     .orElse(-1);
-            return String.valueOf(minDistance);
+            return String.valueOf(minCombinedSteps);
         } catch (IOException ioException) {
             ioException.printStackTrace();
             return "Error reading file: " + ioException.getMessage();

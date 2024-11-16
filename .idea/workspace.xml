@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b35be649-d700-4c29-a921-67b76dbd0b81" name="Changes" comment="2019-Day03 First solutions, lots of duplicated code, no tests">
-      <change afterPath="$PROJECT_DIR$/src/main/adventofcode/framework/util/dataobjects/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b35be649-d700-4c29-a921-67b76dbd0b81" name="Changes" comment="2019-Day03 Remove duplication by introducing helper function, remove dependency to overly complex awt.Point and create own Point class">
       <change beforePath="$PROJECT_DIR$/src/main/adventofcode/year2019/days/Day03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/days/Day03.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +160,7 @@
       <updated>1731500167053</updated>
       <workItem from="1731500167144" duration="2000" />
       <workItem from="1731595236724" duration="7146000" />
-      <workItem from="1731764714793" duration="4756000" />
+      <workItem from="1731764714793" duration="4910000" />
     </task>
     <task id="LOCAL-00001" summary="Updated">
       <created>1731502530960</created>
@@ -248,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1731773401769</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="2019-Day03 Remove duplication by introducing helper function, remove dependency to overly complex awt.Point and create own Point class">
+      <created>1731774360885</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1731774360885</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +282,7 @@
     <MESSAGE value="2019-Day02 part2 bruteforce solution" />
     <MESSAGE value="2019-Day02 add tests" />
     <MESSAGE value="2019-Day03 First solutions, lots of duplicated code, no tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019-Day03 First solutions, lots of duplicated code, no tests" />
+    <MESSAGE value="2019-Day03 Remove duplication by introducing helper function, remove dependency to overly complex awt.Point and create own Point class" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019-Day03 Remove duplication by introducing helper function, remove dependency to overly complex awt.Point and create own Point class" />
   </component>
 </project>
