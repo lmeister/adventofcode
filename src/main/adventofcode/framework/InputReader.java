@@ -14,4 +14,8 @@ public class InputReader {
     public static String readStringFromFile(String filepath) throws IOException {
         return Files.readString(Paths.get(filepath));
     }
+
+    public static List<String> readStringsFromFile(String filepath) throws IOException {
+        return Files.readAllLines(Paths.get(filepath));
+    }
 }

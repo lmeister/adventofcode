@@ -3,6 +3,7 @@ package main.adventofcode.year2019;
 import main.adventofcode.framework.Day;
 import main.adventofcode.year2019.days.Day01;
 import main.adventofcode.year2019.days.Day02;
+import main.adventofcode.year2019.days.Day03;
 
 public class AdventOfCode2019 {
 
@@ -23,6 +24,7 @@ public class AdventOfCode2019 {
         return switch (day) {
             case 1 -> new Day01(inputFilePath);
             case 2 -> new Day02(inputFilePath);
+            case 3 -> new Day03(inputFilePath);
             default -> null;
         };
     }

@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b35be649-d700-4c29-a921-67b76dbd0b81" name="Changes" comment=".gitignore fix">
+    <list default="true" id="b35be649-d700-4c29-a921-67b76dbd0b81" name="Changes" comment="2019-Day02 add tests">
+      <change afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/days/Day03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/input/Day03.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/year2019/days/Day02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/days/Day02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/year2019/util/IntcodeComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/util/IntcodeComputer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/framework/InputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/framework/InputReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/year2019/AdventOfCode2019.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/AdventOfCode2019.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,25 +41,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Leon\Documents\IdeaProjects\Test\AdventOfCode" />
@@ -68,6 +71,7 @@
       <recent name="main.java" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="main.adventofcode.year2019.util" />
       <recent name="test.adventofcode.year2019.days" />
     </key>
   </component>
@@ -126,9 +130,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="IntcodeComputerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AdventOfCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.adventofcode.year2019.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.adventofcode.year2019.util" />
+      <option name="MAIN_CLASS_NAME" value="main.adventofcode.year2019.util.IntcodeComputerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.IntcodeComputerTest" />
         <item itemvalue="JUnit.Day01Test.testFuelForFuel" />
         <item itemvalue="JUnit.Day01Test" />
         <item itemvalue="JUnit.Day01Test.testCalculateFuel" />
@@ -144,7 +164,8 @@
       <option name="presentableId" value="Default" />
       <updated>1731500167053</updated>
       <workItem from="1731500167144" duration="2000" />
-      <workItem from="1731595236724" duration="5290000" />
+      <workItem from="1731595236724" duration="7146000" />
+      <workItem from="1731764714793" duration="3667000" />
     </task>
     <task id="LOCAL-00001" summary="Updated">
       <created>1731502530960</created>
@@ -209,7 +230,21 @@
       <option name="project" value="LOCAL" />
       <updated>1731599214689</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="2019-Day02 part2 bruteforce solution">
+      <created>1731600560092</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731600560092</updated>
+    </task>
+    <task id="LOCAL-00011" summary="2019-Day02 add tests">
+      <created>1731601148677</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1731601148677</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,6 +270,8 @@
     <MESSAGE value="2019-Day02 Added part 1 solution" />
     <MESSAGE value="2019-Day02 Minor changes part1" />
     <MESSAGE value=".gitignore fix" />
-    <option name="LAST_COMMIT_MESSAGE" value=".gitignore fix" />
+    <MESSAGE value="2019-Day02 part2 bruteforce solution" />
+    <MESSAGE value="2019-Day02 add tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019-Day02 add tests" />
   </component>
 </project>
