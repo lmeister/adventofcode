@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b35be649-d700-4c29-a921-67b76dbd0b81" name="Changes" comment="2019-Day02 add tests">
-      <change afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/days/Day03.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/input/Day03.txt" afterDir="false" />
+    <list default="true" id="b35be649-d700-4c29-a921-67b76dbd0b81" name="Changes" comment="2019-Day03 First solutions, lots of duplicated code, no tests">
+      <change afterPath="$PROJECT_DIR$/src/main/adventofcode/framework/util/dataobjects/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/framework/InputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/framework/InputReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/year2019/AdventOfCode2019.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/AdventOfCode2019.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/adventofcode/year2019/days/Day03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/adventofcode/year2019/days/Day03.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +162,7 @@
       <updated>1731500167053</updated>
       <workItem from="1731500167144" duration="2000" />
       <workItem from="1731595236724" duration="7146000" />
-      <workItem from="1731764714793" duration="3667000" />
+      <workItem from="1731764714793" duration="4756000" />
     </task>
     <task id="LOCAL-00001" summary="Updated">
       <created>1731502530960</created>
@@ -244,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1731601148677</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="2019-Day03 First solutions, lots of duplicated code, no tests">
+      <created>1731773401769</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1731773401769</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,6 +276,7 @@
     <MESSAGE value=".gitignore fix" />
     <MESSAGE value="2019-Day02 part2 bruteforce solution" />
     <MESSAGE value="2019-Day02 add tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019-Day02 add tests" />
+    <MESSAGE value="2019-Day03 First solutions, lots of duplicated code, no tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019-Day03 First solutions, lots of duplicated code, no tests" />
   </component>
 </project>

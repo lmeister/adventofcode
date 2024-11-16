@@ -2,10 +2,11 @@ package main.adventofcode.year2019.days;
 
 import main.adventofcode.framework.Day;
 import main.adventofcode.framework.InputReader;
+import main.adventofcode.framework.util.dataobjects.Point;
 
-import java.awt.Point;
 import java.io.IOException;
 import java.util.*;
+import java.util.function.BiFunction;
 
 public class Day03 implements Day {
 
@@ -59,36 +60,27 @@ public class Day03 implements Day {
     }
 
     public static int computeManhattanDistance(Point a, Point b) {
-        return (int) (Math.abs(a.getX() - b.getX()) + Math.abs(a.getY() - b.getY()));
+        return Math.abs(a.getX() - b.getX()) + Math.abs(a.getY() - b.getY());
     }
 
     public static Set<Point> wirePathToPoints(String wirePath) {
         Set<Point> points = new HashSet<>();
-        int x = 0;
-        int y = 0;
-
-        for (String move : wirePath.split(",")) {
-            char direction = move.charAt(0);
-            int distance = Integer.parseInt(move.substring(1));
-
-            for (int i = 0; i < distance; i++) {
-                switch (direction) {
-                    case 'R' -> x++;
-                    case 'L' -> x--;
-                    case 'U' -> y++;
-                    case 'D' -> y--;
-                }
-                points.add(new Point(x, y));
-            }
-        }
+        processWirePath(wirePath, (point, steps) -> points.add(point));
         return points;
     }
 
     public static Map<Point, Integer> wirePathToPointStepMap(String wirePath) {
         Map<Point, Integer> points = new HashMap<>();
+        processWirePath(wirePath, (point, steps) -> points.putIfAbsent(point, steps));
+        return points;
+    }
+
+
+    public static <T> T processWirePath(String wirePath, BiFunction<Point, Integer, T> handler) {
         int x = 0;
         int y = 0;
         int steps = 0;
+        T result = null;
 
         for (String move : wirePath.split(",")) {
             char direction = move.charAt(0);
@@ -102,9 +94,10 @@ public class Day03 implements Day {
                     case 'D' -> y--;
                 }
                 steps++;
-                points.put(new Point(x, y), steps);
+                Point point = new Point(x, y);
+                result = handler.apply(point, steps);
             }
         }
-        return points;
+        return result;
     }
 }
