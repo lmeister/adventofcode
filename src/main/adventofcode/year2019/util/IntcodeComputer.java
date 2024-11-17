@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class IntcodeComputer {
-    private List<Integer> memory;
+    private final List<Integer> memory;
     private List<Integer> currentState;
 
 
     public IntcodeComputer(List<Integer> memory) {
-        this.memory = new ArrayList<>(memory); // copy in order to maintain original list just in case
+        this.memory = List.copyOf(memory);
         this.currentState = new ArrayList<>(this.memory);
     }
 
@@ -23,7 +23,8 @@ public class IntcodeComputer {
     }
 
     public void initializeProgramState(int noun, int verb) {
-        this.currentState = new ArrayList<>(this.memory); // Reset to initial state/memory
+        this.currentState.clear();
+        this.currentState.addAll(this.memory); // Reset to initial state/memory
         this.currentState.set(1, noun);
         this.currentState.set(2, verb);
     }
@@ -58,17 +59,9 @@ public class IntcodeComputer {
         validateAddressBounds(address1, address2, targetAddress);
 
         switch (operation) {
-            case 1:
-                this.currentState.set(targetAddress, this.currentState.get(address1) + this.currentState.get(address2));
-                break;
-            case 2:
-                this.currentState.set(targetAddress, this.currentState.get(address1) * this.currentState.get(address2));
-                break;
-            case 99:
-                // Do nothing, program should halt (Handled in runProgram)
-                break;
-            default:
-                throw new IllegalArgumentException("Invalid opcode: " + operation);
+            case 1 -> this.currentState.set(targetAddress, this.currentState.get(address1) + this.currentState.get(address2));
+            case 2 -> this.currentState.set(targetAddress, this.currentState.get(address1) * this.currentState.get(address2));
+            default -> throw new IllegalArgumentException("Invalid opcode: " + operation);
         }
     }
 
