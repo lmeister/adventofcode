@@ -55,13 +55,7 @@ public class IntcodeComputer {
     }
 
     private void runOpcode(int operation, int address1, int address2, int targetAddress) {
-        if (address1 >= this.currentState.size() || address2 >= this.currentState.size()
-                || targetAddress >= this.currentState.size()) {
-            String errorMessage = String.format(
-                    "Address out of bounds:\nAddress1=[%d], Address2=[%d], TargetAddress=[%d], Programsize=[%d]",
-                    address1, address2, targetAddress, this.currentState.size());
-            throw new IndexOutOfBoundsException(errorMessage);
-        }
+        validateAddressBounds(address1, address2, targetAddress);
 
         switch (operation) {
             case 1:
@@ -80,5 +74,15 @@ public class IntcodeComputer {
 
     public List<Integer> getCurrentState() {
         return this.currentState;
+    }
+
+    private void validateAddressBounds(int... addresses) {
+        for (int address : addresses) {
+            if (address >= this.currentState.size() || address < 0) {
+                throw new IndexOutOfBoundsException(
+                        String.format("Address out of bounds: [%d], Program size: [%d]", address, this.currentState.size())
+                );
+            }
+        }
     }
 }
