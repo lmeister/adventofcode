@@ -60,7 +60,7 @@ public class Day03 implements Day {
     }
 
     public static int computeManhattanDistance(Point a, Point b) {
-        return Math.abs(a.getX() - b.getX()) + Math.abs(a.getY() - b.getY());
+        return Math.abs(a.x() - b.x()) + Math.abs(a.y() - b.y());
     }
 
     public static Set<Point> wirePathToPoints(String wirePath) {
