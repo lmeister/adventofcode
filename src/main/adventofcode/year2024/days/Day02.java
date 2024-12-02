@@ -21,14 +21,7 @@ public class Day02 implements Day {
     public String solvePart1() {
         try {
             List<String> input = InputReader.readStringsFromFile(inputFilePath);
-            int amountOfSafeReports = 0;
-            for (String line : input) {
-                List<Integer> levels = parseLevelLine(line);
-                if (isSteady(levels) && diffChecker(levels)) {
-                    amountOfSafeReports++;
-                }
-            }
-            return String.valueOf(amountOfSafeReports);
+            return String.valueOf(countLevels(input, levels -> isSteady(levels) && diffChecker(levels)));
         } catch (IOException ioException) {
             ioException.printStackTrace();
             return "Error reading file: " + ioException.getMessage();
@@ -39,18 +32,8 @@ public class Day02 implements Day {
     public String solvePart2() {
         try {
             List<String> input = InputReader.readStringsFromFile(inputFilePath);
-            int amountOfSafeReports = 0;
-            for (String line : input) {
-                List<Integer> levels = parseLevelLine(line);
-                if (isSteady(levels) && diffChecker(levels)) {
-                    amountOfSafeReports++;
-                } else {
-                    if (safeWithProblemDampener(levels)) {
-                        amountOfSafeReports++;
-                    }
-                }
-            }
-            return String.valueOf(amountOfSafeReports);
+            return String.valueOf(countLevels(input, levels ->
+                    (isSteady(levels) && diffChecker(levels)) || safeWithProblemDampener(levels)));
         } catch (IOException ioException) {
             ioException.printStackTrace();
             return "Error reading file: " + ioException.getMessage();
@@ -100,5 +83,21 @@ public class Day02 implements Day {
         List<Integer> resized = new ArrayList<>(levels);
         resized.remove(index);
         return resized;
+    }
+
+    private int countLevels(List<String> input, LevelProcessor processor) {
+        int amountOfSafeReports = 0;
+        for (String line : input) {
+            List<Integer> levels = parseLevelLine(line);
+            if (processor.isSafe(levels)) {
+                amountOfSafeReports++;
+            }
+        }
+        return amountOfSafeReports;
+    }
+
+    // Functional interface
+    private interface LevelProcessor {
+        boolean isSafe(List<Integer> levels);
     }
 }
