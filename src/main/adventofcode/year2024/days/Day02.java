@@ -4,6 +4,7 @@ import main.adventofcode.framework.Day;
 import main.adventofcode.framework.InputReader;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class Day02 implements Day {
             List<String> input = InputReader.readStringsFromFile(inputFilePath);
             int amountOfSafeReports = 0;
             for (String line : input) {
-                int[] levels = parseLevelLine(line);
+                List<Integer> levels = parseLevelLine(line);
                 if (isSteady(levels) && diffChecker(levels)) {
                     amountOfSafeReports++;
                 }
@@ -40,7 +41,7 @@ public class Day02 implements Day {
             List<String> input = InputReader.readStringsFromFile(inputFilePath);
             int amountOfSafeReports = 0;
             for (String line : input) {
-                int[] levels = parseLevelLine(line);
+                List<Integer> levels = parseLevelLine(line);
                 if (isSteady(levels) && diffChecker(levels)) {
                     amountOfSafeReports++;
                 } else {
@@ -57,21 +58,20 @@ public class Day02 implements Day {
     }
 
     // For now, we assume a level has at least 2 entries
-    private boolean isSteady(int[] levels) {
-        boolean isIncreasing = levels[0] <= levels[1];
-        for (int i = 1; i < levels.length - 1; i++) {
-            if ((isIncreasing && levels[i] > levels[i + 1]) ||
-                    (!isIncreasing && levels[i] < levels[i + 1])) {
+    private boolean isSteady(List<Integer> levels) {
+        boolean isIncreasing = levels.get(0) <= levels.get(1);
+        for (int i = 0; i < levels.size() - 1; i++) {
+            if ((isIncreasing && levels.get(i) > levels.get(i + 1)) ||
+                    (!isIncreasing && levels.get(i) < levels.get(i + 1))) {
                 return false;
             }
         }
         return true;
     }
 
-    // Inclusive bounds
-    private boolean diffChecker(int[] levels) {
-        for (int i = 0; i < levels.length - 1; i++) {
-            int diff = Math.abs(levels[i] - levels[i + 1]);
+    private boolean diffChecker(List<Integer> levels) {
+        for (int i = 0; i < levels.size() - 1; i++) {
+            int diff = Math.abs(levels.get(i) - levels.get(i + 1));
             if (diff < 1 || diff > 3) {
                 return false;
             }
@@ -79,15 +79,16 @@ public class Day02 implements Day {
         return true;
     }
 
-    private int[] parseLevelLine(String line) {
+    private List<Integer> parseLevelLine(String line) {
         return Arrays.stream(line.split(" "))
                 .mapToInt(Integer::parseInt)
-                .toArray();
+                .boxed()
+                .toList();
     }
 
-    public boolean safeWithProblemDampener(int[] levels) {
-        for (int i = 0; i < levels.length; i++) {
-            int[] dampenedLevels = removeAtIndex(levels, i);
+    public boolean safeWithProblemDampener(List<Integer> levels) {
+        for (int i = 0; i < levels.size(); i++) {
+            List<Integer> dampenedLevels = removeAtIndex(levels, i);
             if (isSteady(dampenedLevels) && diffChecker(dampenedLevels)) {
                 return true;
             }
@@ -95,13 +96,9 @@ public class Day02 implements Day {
         return false;
     }
 
-    private int[] removeAtIndex(int[] levels, int index) {
-        int[] resized = new int[levels.length - 1];
-        for (int i = 0, j = 0; i < levels.length; i++) {
-            if (i != index) {
-                resized[j++] = levels[i];
-            }
-        }
+    private List<Integer> removeAtIndex(List<Integer> levels, int index) {
+        List<Integer> resized = new ArrayList<>(levels);
+        resized.remove(index);
         return resized;
     }
 }
