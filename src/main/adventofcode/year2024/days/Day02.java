@@ -58,19 +58,11 @@ public class Day02 implements Day {
 
     // For now, we assume a level has at least 2 entries
     private boolean isSteady(int[] levels) {
-        boolean checkIncrease = levels[0] > levels[1];
-        // This way we only iterate through the levels once
-        if (checkIncrease) {
-            for (int i = 1; i < levels.length - 1; i++) {
-                if (levels[i] < levels[i + 1]) {
-                    return false;
-                }
-            }
-        } else {
-            for (int i = 1; i < levels.length - 1; i++) {
-                if (levels[i] > levels[i + 1]) {
-                    return false;
-                }
+        boolean isIncreasing = levels[0] <= levels[1];
+        for (int i = 1; i < levels.length - 1; i++) {
+            if ((isIncreasing && levels[i] > levels[i + 1]) ||
+                    (!isIncreasing && levels[i] < levels[i + 1])) {
+                return false;
             }
         }
         return true;
