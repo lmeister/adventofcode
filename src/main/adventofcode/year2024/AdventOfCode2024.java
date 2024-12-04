@@ -23,6 +23,7 @@ public class AdventOfCode2024 {
             case 1 -> new Day01(inputFilePath);
             case 2 -> new Day02(inputFilePath);
             case 3 -> new Day03(inputFilePath);
+            case 4 -> new Day04(inputFilePath);
             default -> null;
         };
     }
