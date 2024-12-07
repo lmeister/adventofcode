@@ -1,5 +1,7 @@
 package main.adventofcode.framework;
 
+import main.adventofcode.framework.util.dataobjects.Grid;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -19,6 +21,7 @@ public class InputReader {
         return Files.readAllLines(Paths.get(filepath));
     }
 
+    // TODO: Remove this, refactor usages to use Grid class
     public static char[][] readCharGridFromFile(String filepath) throws IOException {
         List<String> lines = Files.readAllLines(Paths.get(filepath));
         int rows = lines.size();
@@ -30,5 +33,21 @@ public class InputReader {
         }
 
         return grid;
+    }
+
+    public static Grid<Character> readCharacterGridFromFile(String filepath) throws IOException {
+        List<String> lines = Files.readAllLines(Paths.get(filepath));
+        int rows = lines.size();
+        int cols = lines.get(0).length(); // Assumes all rows have the same length.
+
+        // Create a 2D array of Characters
+        Character[][] gridArray = new Character[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                gridArray[i][j] = lines.get(i).charAt(j);
+            }
+        }
+
+        return new Grid<>(gridArray);
     }
 }
