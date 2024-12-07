@@ -21,9 +21,11 @@ public class Day07 implements Day {
         // Example usage: replace with actual input reading logic
         try {
             List<String> input = InputReader.readStringsFromFile(inputFilePath);
+            List<Operand> availableOperands = List.of(Operand.ADD, Operand.MULTIPLY);
+
             long sum = 0L;
             for (String line : input) {
-                Equation equation = findMatchingEquation(line);
+                Equation equation = findMatchingEquation(line, availableOperands);
                 if (equation != null) {
                     sum += Long.parseLong(line.split(":")[0].trim());
                 }
@@ -37,18 +39,33 @@ public class Day07 implements Day {
 
     @Override
     public String solvePart2() {
-        return null;
+        try {
+            List<String> input = InputReader.readStringsFromFile(inputFilePath);
+            List<Operand> availableOperands = List.of(Operand.ADD, Operand.MULTIPLY, Operand.CONCATENATE);
+
+            long sum = 0L;
+            for (String line : input) {
+                Equation equation = findMatchingEquation(line, availableOperands);
+                if (equation != null) {
+                    sum += Long.parseLong(line.split(":")[0].trim());
+                }
+            }
+            return String.valueOf(sum);
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+            return "Error reading file: " + ioException.getMessage();
+        }
     }
 
-    private Equation findMatchingEquation(String line) {
+    private Equation findMatchingEquation(String line, List<Operand> availableOperands) {
         String[] parts = line.split(":");
         long targetResult = Long.parseLong(parts[0].trim());
-        List<Integer> numbers = Arrays.stream(parts[1].trim().split(" "))
-                .map(Integer::parseInt)
+        List<Long> numbers = Arrays.stream(parts[1].trim().split(" "))
+                .map(Long::parseLong)
                 .toList();
 
         // Generate all possible operand combinations
-        List<List<Operand>> operandCombinations = generateOperandCombinations(numbers.size() - 1);
+        List<List<Operand>> operandCombinations = generateOperandCombinations(numbers.size() - 1, availableOperands);
 
         // Evaluate each combination
         for (List<Operand> operands : operandCombinations) {
@@ -61,26 +78,27 @@ public class Day07 implements Day {
         return null; // No matching equation found
     }
 
-    private List<List<Operand>> generateOperandCombinations(int length) {
+    private List<List<Operand>> generateOperandCombinations(int length, List<Operand> availableOperands) {
         List<List<Operand>> combinations = new ArrayList<>();
-        generateOperandCombinationsRecursive(length, new ArrayList<>(), combinations);
+        generateOperandCombinationsRecursive(length, availableOperands, new ArrayList<>(), combinations);
         return combinations;
     }
 
-    private void generateOperandCombinationsRecursive(int length, List<Operand> current, List<List<Operand>> combinations) {
+    private void generateOperandCombinationsRecursive(int length, List<Operand> availableOperands,
+                                                      List<Operand> current, List<List<Operand>> combinations) {
         if (current.size() == length) {
             combinations.add(new ArrayList<>(current));
             return;
         }
 
-        for (Operand operand : Operand.values()) {
+        for (Operand operand : availableOperands) {
             current.add(operand);
-            generateOperandCombinationsRecursive(length, current, combinations);
+            generateOperandCombinationsRecursive(length, availableOperands, current, combinations);
             current.remove(current.size() - 1); // Backtrack
         }
     }
 
-    private static record Equation(List<Integer> numbers, List<Operand> operands) {
+    private static record Equation(List<Long> numbers, List<Operand> operands) {
         public Equation {
             if (operands.size() != numbers.size() - 1) {
                 throw new IllegalArgumentException("Invalid equation: number of operands must be exactly " +
@@ -89,10 +107,10 @@ public class Day07 implements Day {
         }
 
         public double compute() {
-            double result = numbers.get(0); // Start with the first number
+            long result = numbers.get(0); // Start with the first number
             for (int i = 0; i < operands.size(); i++) {
                 Operand operand = operands.get(i);
-                double nextNumber = numbers.get(i + 1);
+                long nextNumber = numbers.get(i + 1);
                 result = operand.apply(result, nextNumber);
             }
             return result;
@@ -112,17 +130,39 @@ public class Day07 implements Day {
     private enum Operand {
         ADD {
             @Override
-            public double apply(double a, double b) {
+            public long apply(long a, long b) {
                 return a + b;
+            }
+
+            @Override
+            public String toString() {
+                return "+";
             }
         },
         MULTIPLY {
             @Override
-            public double apply(double a, double b) {
+            public long apply(long a, long b) {
                 return a * b;
+            }
+
+            @Override
+            public String toString() {
+                return "*";
+            }
+        },
+        CONCATENATE {
+            @Override
+            public long apply(long a, long b) {
+                String concatenated = String.valueOf(a) + String.valueOf(b);
+                return Long.parseLong(concatenated);
+            }
+
+            @Override
+            public String toString() {
+                return "||";
             }
         };
 
-        public abstract double apply(double a, double b);
+        public abstract long apply(long a, long b);
     }
 }
